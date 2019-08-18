@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\squirrel.windows.1.9.1\build\squirrel.windows.props" Condition="Exists('..\packages\squirrel.windows.1.9.1\build\squirrel.windows.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6CF2A496-C9D7-41A3-B92B-E0C669FD5A6B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UI</RootNamespace>
+    <AssemblyName>QuickAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>build\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>es-MX</TargetCulture>
+    <ProductName>TecnoPOS</ProductName>
+    <PublisherName>Tecnomarketing</PublisherName>
+    <SuiteName>Tecnomarketing POS</SuiteName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>UI.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>03A4B8DDBD0E24F217BF8AE7499FAB416039D037</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Presentation_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bindery, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bindery.1.0.0\lib\net45\Bindery.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=1d14d6e5194e7f4a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.MsDelta, Version=1.1.0.0, Culture=neutral, PublicKeyToken=46b2138a390abf55, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.MsDelta.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.PatchApi, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3e8888ee913ed789, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.PatchApi.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.4.0\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="HTMLWYSIWYG, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\HTMLWYSIWYG.dll</HintPath>
+    </Reference>
+    <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ini-parser.2.5.2\lib\net20\INIFileParser.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.10.3.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.10.3\lib\net40\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.10.3.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.10.3\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb, Version=0.10.3.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.10.3\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks, Version=0.10.3.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.10.3\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Squirrel, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.1.9.1\lib\Net45\NuGet.Squirrel.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Select.HtmlToPdf, Version=19.1.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\Select.HtmlToPdf.19.1.0\lib\net40\Select.HtmlToPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.17.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.17.1\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.7.1.1\lib\net461\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Squirrel, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.1.9.1\lib\Net45\Squirrel.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tools">
+      <HintPath>Lib\Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ViewModel\AppMainViewModel.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ISettings.cs" />
+    <Compile Include="Models\SettingsModel.cs" />
+    <Compile Include="Presenter\Order\OrderPresenter.cs" />
+    <Compile Include="Presenter\Order\OrdersPresenter.cs" />
+    <Compile Include="Presenter\Product\ProductPresenter.cs" />
+    <Compile Include="Presenter\Product\ProductsPresenter.cs" />
+    <Compile Include="Proxy\RestAPIProxy.cs" />
+    <Compile Include="Controls\LollipopButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopFileInput.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopFlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopFolderInPut.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopSmallCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LollipopToggle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialCard.Designer.cs">
+      <DependentUpon>MaterialCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MaterialListViewBindable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialListViewBindable.Designer.cs">
+      <DependentUpon>MaterialListViewBindable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OvalPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\OvalPictureBox.Designer.cs">
+      <DependentUpon>OvalPictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Mails\OrderMailBuilder.cs" />
+    <Compile Include="Services\PDF\ReceiptPDFBuilder.cs" />
+    <Compile Include="Services\Mails\WelcomeMailBuilder.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Tickets\ReceiptTicketBuilder.cs" />
+    <Compile Include="Validators\OrderValidator.cs" />
+    <Compile Include="Validators\ProductValidator.cs" />
+    <Compile Include="Validators\SettingsValidator.cs" />
+    <Compile Include="ViewModel\CommandHandler.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\ObservableObject.cs" />
+    <Compile Include="Presenter\Customer\CustomerPresenter.cs" />
+    <Compile Include="Services\Messenger.cs" />
+    <Compile Include="ViewModel\Order\AddressingTabViewModel.cs" />
+    <Compile Include="ViewModel\Order\CustomerTabViewModel.cs" />
+    <Compile Include="ViewModel\Order\OrderReviewViewModel.cs" />
+    <Compile Include="ViewModel\Order\OrderViewModel.cs" />
+    <Compile Include="ViewModel\Order\PaymentTabViewModel.cs" />
+    <Compile Include="ViewModel\Order\ProductsTabViewModel.cs" />
+    <Compile Include="ViewModel\Order\ShippingTabViewModel.cs" />
+    <Compile Include="ViewModel\Order\TotalTabViewModel.cs" />
+    <Compile Include="ViewModel\Product\DescriptionViewModel.cs" />
+    <Compile Include="ViewModel\Product\DiscountTabViewModel.cs" />
+    <Compile Include="ViewModel\Product\GeneralTabViewModel.cs" />
+    <Compile Include="ViewModel\Product\ImagesTabViewModel.cs" />
+    <Compile Include="ViewModel\Product\LinksTabViewModel.cs" />
+    <Compile Include="ViewModel\Product\SpecialTabViewModel.cs" />
+    <Compile Include="ViewModel\Product\DataTabViewModel.cs" />
+    <Compile Include="ViewModel\Setting\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="Presenter\Customer\CustomersPresenter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServiceLocator.cs" />
+    <Compile Include="UIManagers\DrawHelper.cs" />
+    <Compile Include="UIManagers\FontManager.cs" />
+    <Compile Include="Validators\AddressValidator.cs" />
+    <Compile Include="Validators\CustomerValidator.cs" />
+    <Compile Include="ViewModel\Customer\CustomerViewModel.cs" />
+    <Compile Include="View\Customer\CustomersView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Customer\CustomersView.designer.cs">
+      <DependentUpon>CustomersView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\CustomerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Customer\CustomerView.Designer.cs">
+      <DependentUpon>CustomerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\ICustomersView.cs" />
+    <Compile Include="View\IView.cs" />
+    <Compile Include="View\Order\IOrderReviewView.cs" />
+    <Compile Include="View\Order\IOrdersView.cs" />
+    <Compile Include="View\Order\IOrderView.cs" />
+    <Compile Include="View\Order\OrderReviewView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Order\OrderReviewView.Designer.cs">
+      <DependentUpon>OrderReviewView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Order\OrdersView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Order\OrdersView.Designer.cs">
+      <DependentUpon>OrdersView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Order\OrderView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Order\OrderView.Designer.cs">
+      <DependentUpon>OrderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Product\IProductsView.cs" />
+    <Compile Include="View\Product\ProductGeneralView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Product\ProductGeneralView.Designer.cs">
+      <DependentUpon>ProductGeneralView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Product\ProductsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Product\ProductsView.designer.cs">
+      <DependentUpon>ProductsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Product\ProductView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Product\ProductView.Designer.cs">
+      <DependentUpon>ProductView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\SettingsView.designer.cs">
+      <DependentUpon>SettingsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WelcomeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\WelcomeView.Designer.cs">
+      <DependentUpon>WelcomeView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\MaterialCard.resx">
+      <DependentUpon>MaterialCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Customer\CustomersView.resx">
+      <DependentUpon>CustomersView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Customer\CustomerView.resx">
+      <DependentUpon>CustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Order\OrderReviewView.resx">
+      <DependentUpon>OrderReviewView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Order\OrdersView.resx">
+      <DependentUpon>OrdersView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Order\OrderView.resx">
+      <DependentUpon>OrderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Product\ProductGeneralView.resx">
+      <DependentUpon>ProductGeneralView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Product\ProductsView.resx">
+      <DependentUpon>ProductsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Product\ProductView.resx">
+      <DependentUpon>ProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SettingsView.resx">
+      <DependentUpon>SettingsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WelcomeView.resx">
+      <DependentUpon>WelcomeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Fonts\Roboto-Medium.ttf" />
+    <None Include="Resources\Fonts\Roboto-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imgs\AddImage_32px.png" />
+    <Content Include="Libs\HTMLWYSIWYG.dll" />
+    <Content Include="Libs\MaterialSkin.dll" />
+    <Content Include="Resources\Imgs\Address_32px.png" />
+    <Content Include="Resources\Imgs\AddTag_32px.png" />
+    <Content Include="Resources\Imgs\AddUserMale_32px.png" />
+    <None Include="Resources\Imgs\AvailableUpdates_64px.png" />
+    <None Include="Resources\Imgs\api_32px.png" />
+    <Content Include="Resources\Imgs\BackTo_32px.png" />
+    <Content Include="Resources\Imgs\Back_32px.png" />
+    <Content Include="Resources\Imgs\BankCards_32px.png" />
+    <Content Include="Resources\Imgs\BulletedList_32px.png" />
+    <Content Include="Resources\Imgs\Calendar_32px.png" />
+    <Content Include="Resources\Imgs\Checkmark_32px.png" />
+    <Content Include="Resources\Imgs\ContactDetails_32px.png" />
+    <Content Include="Resources\Imgs\CurrencyExchange_32px.png" />
+    <Content Include="Resources\Imgs\CustomerOrder_32px.png" />
+    <Content Include="Resources\Imgs\Customer_32px.png" />
+    <Content Include="Resources\Imgs\Delete_32px.png" />
+    <Content Include="Resources\Imgs\Denied_32px.png" />
+    <Content Include="Resources\Imgs\Document_32px.png" />
+    <Content Include="Resources\Imgs\DownloadFromCloud_32px.png" />
+    <Content Include="Resources\Imgs\Edit_32px.png" />
+    <None Include="Resources\Imgs\Envelope_32px.png" />
+    <None Include="Resources\Imgs\Export_32px.png" />
+    <Content Include="Resources\Imgs\Eye_32px.png" />
+    <Content Include="Resources\Imgs\Forward_32px.png" />
+    <None Include="Resources\Imgs\Import_32px.png" />
+    <None Include="Resources\Icons\icon_opencart.ico" />
+    <Content Include="Resources\Imgs\Info_32px.png" />
+    <None Include="Resources\Imgs\loading_squares.gif" />
+    <None Include="Resources\Imgs\key_32px.png" />
+    <Content Include="Resources\Imgs\MultipleDevices_32px.png" />
+    <Content Include="Resources\Imgs\NewPost_32px.png" />
+    <Content Include="Resources\Imgs\NewProduct_32px.png" />
+    <Content Include="Resources\Imgs\NoEntry_32px.png" />
+    <Content Include="Resources\Imgs\OpenCart_32px.png" />
+    <Content Include="Resources\Imgs\Open_32px.png" />
+    <Content Include="Resources\Imgs\Options_32px.png" />
+    <Content Include="Resources\Imgs\Password_32px.png" />
+    <Content Include="Resources\Imgs\People_32px.png" />
+    <Content Include="Resources\Imgs\Phone_32px.png" />
+    <Content Include="Resources\Imgs\PriceComparison_32px.png" />
+    <Content Include="Resources\Imgs\Pricing_32px.png" />
+    <Content Include="Resources\Imgs\Prize_32px.png" />
+    <Content Include="Resources\Imgs\Product_96px.png" />
+    <Content Include="Resources\Imgs\PurchaseOrder_32px.png" />
+    <Content Include="Resources\Imgs\Refresh_32px.png" />
+    <Content Include="Resources\Imgs\Registration_32px.png" />
+    <Content Include="Resources\Imgs\Save_32px.png" />
+    <Content Include="Resources\Imgs\Search_32px.png" />
+    <Content Include="Resources\Imgs\Services_32px.png" />
+    <Content Include="Resources\Imgs\ShoppingCartDetails_32px.png" />
+    <Content Include="Resources\Imgs\ShoppingCart_32px.png" />
+    <Content Include="Resources\Imgs\Trash_32px.png" />
+    <Content Include="Resources\Imgs\Truck_32px.png" />
+    <Content Include="Resources\Imgs\UserGroups_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{27b025dd-bee7-4dbe-b26d-0cc829512797}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RESTClient\Api.csproj">
+      <Project>{dc031ac5-ceb5-4a7b-8eae-00ba24dd419f}</Project>
+      <Name>Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{a7fa364d-db5b-4834-b888-3a78bdc10339}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="TecnoPoS" Condition=" '$(Configuration)' == 'Release'">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+      <Output TaskParameter="Assemblies" ItemName="myAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Exec Command="nuget pack tecnopos.nuspec -Version %(myAssemblyInfo.Version) -Properties Configuration=Release -OutputDirectory $(OutDir) -BasePath $(OutDir)" />
+    <Exec Command="squirrel --releasify $(OutDir)tecnopos.$([System.Version]::Parse(%(myAssemblyInfo.Version)).ToString(3)).nupkg" />
+    <Exec Command="..\packages\squirrel.windows.1.9.0\tools\Squirrel.exe $(OutDir)Pittertecnopos.$([System.Version]::Parse(%(myAssemblyInfo.Version)).ToString(3)).nupkg" />
+  </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\squirrel.windows.1.9.1\build\squirrel.windows.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\squirrel.windows.1.9.1\build\squirrel.windows.props'))" />
+    <Error Condition="!Exists('..\packages\squirrel.windows.1.9.1\build\squirrel.windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\squirrel.windows.1.9.1\build\squirrel.windows.targets'))" />
+  </Target>
+  <Import Project="..\packages\squirrel.windows.1.9.1\build\squirrel.windows.targets" Condition="Exists('..\packages\squirrel.windows.1.9.1\build\squirrel.windows.targets')" />
+</Project>
